@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ToDoList {
@@ -74,7 +75,7 @@ public class ToDoList {
     public void onShowAllItems() {
         for (int i = 0; i < user.getToDoItems().size(); i++) {
             ToDoItem item = user.getToDoItems().get(i);
-            if (item.isDone()) {
+            if (item.getDone()) {
                 System.out.println(i + ". [X] " + item.getDescription());
             } else {
                 System.out.println(i + ". [ ] " + item.getDescription());
@@ -90,6 +91,9 @@ public class ToDoList {
         Scanner scanner = new Scanner(System.in);
         String description = scanner.nextLine();
         // TODO Now: Call the add(ToDoItem item) method of the user's to-do items list to add a new item
+        ArrayList<ToDoItem> itemList = this.user.getToDoItems();
+        itemList.add(new ToDoItem(description));
+        this.user.setToDoItems(itemList);
     }
 
     /**
@@ -101,6 +105,9 @@ public class ToDoList {
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
         // TODO Now: Set the isDone field of the item at the specified index to true
+        ArrayList<ToDoItem> itemList = this.user.getToDoItems();
+        itemList.get(itemNumber).setDone(true);
+        this.user.setToDoItems(itemList);
     }
 
     /**
@@ -112,6 +119,9 @@ public class ToDoList {
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
         // TODO Now: Set the isDone field of the item at the specified index to false
+        ArrayList<ToDoItem> itemList = this.user.getToDoItems();
+        itemList.get(itemNumber).setDone(false);
+        this.user.setToDoItems(itemList);
     }
 
     /**
@@ -123,6 +133,9 @@ public class ToDoList {
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
         // TODO Now: Remove the item at the specified index from the user's to-do items list
+        ArrayList<ToDoItem> itemList = this.user.getToDoItems();
+        itemList.remove(itemNumber);
+        this.user.setToDoItems(itemList);
     }
 
     /**

@@ -10,15 +10,15 @@ public class ToDoItem {
         this.isDone = false;
     }
 
-    public String GetDescription(){
+    public String getDescription(){
         return description;
     }
 
-    public boolean GetDone(){
+    public boolean getDone(){
         return isDone;
     }
 
-    public void setDesc(String newDesc){
+    public void setDescription(String newDesc){
         this.description = newDesc;
     }
 

@@ -49,4 +49,8 @@ public class User {
     public ArrayList<ToDoItem> getToDoItems() {
         return toDoItems;
     }
+
+    public void setToDoItems(ArrayList<ToDoItem> itemList){
+        this.toDoItems = itemList;
+    }
 }

@@ -78,6 +78,8 @@ public class Main {
         User user = authService.logIn(username, password);
         System.out.println("Welcome, " + user.getUsername() + "!");
         // TODO Now: Create an instance of the ToDoList class with the logged-in user and call the run method
+        ToDoList currentList = new ToDoList(user);
+        currentList.run();
     }
 
     /**
