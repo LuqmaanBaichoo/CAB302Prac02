@@ -74,7 +74,10 @@ public class Main {
         String password = scanner.nextLine();
         User user = authService.logIn(username, password);
         System.out.println("Welcome, " + user.getUsername() + "!");
-        // TODO Later: Add the to-do list operations
+        System.out.println("Welcome, " + user.getUsername() + "!");
+
+        ToDoList toDoList = new ToDoList(user);
+        toDoList.run();
     }
 
     /**
